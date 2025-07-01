@@ -53,10 +53,22 @@ $data = $result->fetch_assoc();
         <tr><td>Jumlah</td><td><?= $data['jumlah'] ?></td></tr>
         <tr><td>Tambahan Harga</td><td><?= number_format($data['tambahan_harga']) ?></td></tr>
         <tr><td>Total Harga</td><td><strong><?= number_format(($data['harga'] * $data['jumlah']) + $data['tambahan_harga']) ?></strong></td></tr>
-        <tr><td>Status</td><td><?= $data['status'] ?></td></tr>
         <tr><td>Catatan</td><td><?= nl2br($data['catatan']) ?></td></tr>
     </table>
     <a class="btn-back" href="orderList2.php">← Kembali ke Daftar</a>
+    <form method="POST" action="export_detail_pesanan_pdf.php" target="_blank">
+        <input type="hidden" name="id" value="<?= $id ?>">
+        <button type="submit" style="
+                    background-color: #2f54eb; 
+                    color: white; 
+                    border: none; 
+                    padding: 10px 20px; 
+                    border-radius: 5px; 
+                    cursor: pointer;">
+                    Convert to PDF
+                </button>
+            </form>
+
     <?php else: ?>
     <p>Data pesanan tidak ditemukan.</p>
     <?php endif; ?>
