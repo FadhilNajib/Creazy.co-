@@ -83,7 +83,6 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Laporan - <?= $nama_bulan_id ?> <?= $tahun ?></title>
-         <link rel="icon" href="logo.png" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -235,22 +234,6 @@ $conn->close();
         <?php endif; ?>
 
         <a class="btn-back" href="laporan.php?tahun=<?= $tahun ?>">← Kembali ke Laporan Tahunan</a>
-
-        <h1>  </h1>
-        <form method="POST" action="export_bulanan_pdf.php" target="_blank">
-            <input type="hidden" name="bulan" value="<?= $bulan ?>">
-            <input type="hidden" name="tahun" value="<?= $tahun ?>">
-            <button type="submit" style="
-                background-color: #2f54eb; 
-                color: white; 
-                border: none; 
-                padding: 10px 20px; 
-                border-radius: 5px; 
-                cursor: pointer;">
-                Convert to PDF
-            </button>
-        </form>
-
     </div>
 
 </body>

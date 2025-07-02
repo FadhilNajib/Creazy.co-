@@ -20,11 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (strlen($password) < 6) { // Contoh: password minimal 6 karakter
         $pesan_error = "Password minimal 6 karakter.";
     } else {
-        // --- KEAMANAN PENTING: Hash Password ---
-        // PASTIKAN KOLOM 'password' di tabel 'admin' adalah VARCHAR(255)
-        // Jika tidak, password akan terpotong dan admin tidak bisa login.
-        // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
+        
         // Cek apakah username sudah ada
         $sql_check_username = "SELECT id_admin FROM admin WHERE username = ?";
         $stmt_check = $conn->prepare($sql_check_username);

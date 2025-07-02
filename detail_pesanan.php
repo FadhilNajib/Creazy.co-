@@ -56,19 +56,6 @@ $data = $result->fetch_assoc();
         <tr><td>Catatan</td><td><?= nl2br($data['catatan']) ?></td></tr>
     </table>
     <a class="btn-back" href="orderList2.php">← Kembali ke Daftar</a>
-    <form method="POST" action="export_detail_pesanan_pdf.php" target="_blank">
-        <input type="hidden" name="id" value="<?= $id ?>">
-        <button type="submit" style="
-                    background-color: #2f54eb; 
-                    color: white; 
-                    border: none; 
-                    padding: 10px 20px; 
-                    border-radius: 5px; 
-                    cursor: pointer;">
-                    Convert to PDF
-                </button>
-            </form>
-
     <?php else: ?>
     <p>Data pesanan tidak ditemukan.</p>
     <?php endif; ?>

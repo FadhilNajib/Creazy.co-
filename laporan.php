@@ -53,7 +53,6 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report - CREAZY.CO</title>
-         <link rel="icon" href="logo.png" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -239,21 +238,6 @@ $conn->close();
         <div class="total-semua">
             Total Keseluruhan Pemasukan Tahun <?= $tahun_terpilih ?>: Rp <?= number_format($total_semua, 0, ',', '.') ?>
         </div>
-        <div style="margin-top: 20px;">
-        <form method="POST" action="export_tahunan_pdf.php" target="_blank">
-            <input type="hidden" name="tahun" value="<?= $tahun_terpilih ?>">
-            <button type="submit" style="
-                background-color: #2f54eb; 
-                color: white; 
-                border: none; 
-                padding: 10px 20px; 
-                border-radius: 5px; 
-                cursor: pointer;">
-                Convert to PDF
-            </button>
-        </form>
-</div>
-
     </div>
 
 </body>
