@@ -118,7 +118,11 @@ $result = $conn->query("SELECT id_produk, nama_produk, harga, bahan, gambar FROM
 
 <div class="container">
     <h2>Kelola Produk</h2>
-    <a href="tambah_produk.php" class="btn-add">+ Tambah Produk</a>
+
+    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                <a href="tambah_produk.php" class="btn-add">+ Tambah Produk</a>
+    <?php endif; ?>
+    
 
     <div style="clear: both;"></div> <table>
         <thead>

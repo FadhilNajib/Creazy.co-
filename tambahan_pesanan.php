@@ -22,14 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $status = $_POST['status'];
     $catatan = $_POST['catatan'];
     $id_produk = $_POST['id_produk'];
-    $id_admin = 1; // Asumsi: ID Admin default atau ambil dari session nantinya
+    $id_adminr = 1; // Asumsi: ID Admin default atau ambil dari session nantinya
 
     $sql = "INSERT INTO pesanan 
-    (nama_pemesan, nomor_pemesan, tanggal_pesanan, estimasi, jumlah, tambahan_harga, status, catatan, id_admin, id_produk) 
+    (nama_pemesan, nomor_pemesan, tanggal_pesanan, estimasi, jumlah, tambahan_harga, status, catatan, id_adminr, id_produk) 
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sississsii", $nama, $nomor, $tanggal, $estimasi, $jumlah, $tambahan, $status, $catatan, $id_admin, $id_produk);
+    $stmt->bind_param("sississsii", $nama, $nomor, $tanggal, $estimasi, $jumlah, $tambahan, $status, $catatan, $id_adminr, $id_produk);
 
     if ($stmt->execute()) {
         echo "<script>alert('Pesanan berhasil ditambahkan!')</script>";
